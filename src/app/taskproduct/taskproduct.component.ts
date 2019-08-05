@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 })
 export class TaskproductComponent implements OnInit {
   arr1: Task[] = [];
+  name:string="ScaechTask";
   constructor(private data:TaskdataService,private _router:Router) { }
 
   ngOnInit() {
@@ -35,6 +36,22 @@ export class TaskproductComponent implements OnInit {
   // }
   onTaskEdit(item:Task){
     this._router.navigate(['/edittask',item.Id]);
+  }
+
+  onSideBarClick(value) {
+    if (value != "") {
+      this.arr1 = this.arr1.filter(x => x.Id.indexOf(value) != -1);
+    } else {
+      this.data.getAllTask().subscribe(
+        (data: Task[]) => {
+          this.arr1 = data;
+        },
+        function(error) {
+          alert(error);
+        },
+        function() {}
+      );
+    }
   }
 }
 
