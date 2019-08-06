@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 })
 export class TaskproductComponent implements OnInit {
   arr1: Task[] = [];
-  name:string="ScaechTask";
+  name:string="Search";
   constructor(private data:TaskdataService,private _router:Router) { }
 
   ngOnInit() {

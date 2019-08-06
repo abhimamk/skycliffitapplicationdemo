@@ -1,15 +1,19 @@
 <div class="container-fluid" >
+
   <div class="col-md-3">
+      <marquee width = "50%"   onmouseover="this.stop();" onmouseout="this.start();" >Search for task based on id</marquee>
     <app-tasksidebar [categoryName]="name" (jinal)="onSideBarClick($event)"></app-tasksidebar>
   </div>
   <div class="col-md-9">
+      <marquee width = "50%" scrollamount="14" onmouseover="this.stop();" onmouseout="this.start();">Task Table  for Edit and Delete</marquee>
 <div class="row">
-  <table class="table" >
-    <thead>
+  <table class="table" style="width: 100%" >
+    <tr>
       <th>Id</th>
       <th>Title</th>
       <th>Status</th>
-    </thead>
+      <th>Action</th>
+    </tr>
     <tbody>
       <tr *ngFor="let item of arr1" >
         <td>{{item.Id}}</td>
