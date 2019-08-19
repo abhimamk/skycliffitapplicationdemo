@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, AbstractControl, Validators, FormGroup } from "@angular/forms";
+import { FormBuilder, FormControl, AbstractControl, Validators, FormGroup, FormArray } from "@angular/forms";
 @Component({
   selector: 'app-customer',
   templateUrl: './customer.component.html',
   styleUrls: ['./customer.component.css']
 })
 export class CustomerComponent implements OnInit {
-customer;
+customer:FormGroup;
 invalidName:string[]=['xyz','abc'];
   constructor(private fb:FormBuilder) { }
 
@@ -17,8 +17,29 @@ invalidName:string[]=['xyz','abc'];
       passwordgroup:new  FormGroup({
         password:new FormControl(null,Validators.required),
         con_password:new FormControl(null,Validators.required)
-      },this.matchPassword.bind(this))
+      },this.matchPassword.bind(this)),
+      email:new FormControl(),
+      mobile_num:new FormControl(),
+      notification:new FormControl('text'),
+      hobby:new FormArray([])
     });
+
+    this.customer.get('notification').valueChanges.subscribe(
+      (x)=>{
+        let email=this.customer.get('email');
+        let mobile_num=this.customer.get('mobile_num');
+        if(x=="email"){
+          email.setValidators(Validators.required);
+          mobile_num.clearValidators();
+        }
+        else{
+          email.clearValidators();
+          mobile_num.setValidators(Validators.required);
+        }
+        email.updateValueAndValidity();
+        mobile_num.updateValueAndValidity();
+      }
+    );
   }
 
   checkFirstName(x:AbstractControl):{[y:string]:boolean}
@@ -41,9 +62,17 @@ invalidName:string[]=['xyz','abc'];
     return null;
   }
 
-
   onSubmit(){
     console.log(this.customer);
   }
+
+  onAddHobbyClicked(){
+    let control=new FormControl(null,Validators.required);
+   (<FormArray> this.customer.get('hobby')).push(control);
+  }
+  onDeleteHobbyClicked(i){
+    (<FormArray> this.customer.get('hobby')).removeAt(i);
+  }
+
 
 }
