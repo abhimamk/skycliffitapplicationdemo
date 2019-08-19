@@ -4,11 +4,28 @@
     <div class="form-group" >
       <label>First Name</label>
       <input formControlName="FirstName" type="text" placeholder="Enter First Name" class="form-control" >
+      <label class="alert alert-danger" *ngIf="customer.get('FirstName').hasError('required')">Firstname is required</label>
+      <label class="alert alert-danger" *ngIf="customer.get('FirstName').hasError('invadlidname')" >FirstName is invalid</label>
+      <label class="alert alert-danger" *ngIf="customer.get('FirstName').hasError('minlength')" >Name should be minimum 3 character</label>
     </div>
     <div class="form-group" >
         <label>Last Name</label>
         <input formControlName="LastName" type="text" placeholder="Enter Last Name" class="form-control" >
+        <label class="alert alert-danger" *ngIf="customer.get('LastName').hasError('required')">Last name is required</label>
       </div>
+      <div  formGroupName="passwordgroup"  class="form-group">
+        <div>
+          <label>enter password</label>
+          <input type="password" class="form-control" formControlName="password">
+          <label *ngIf="customer.get('passwordgroup').get('password').hasError('required')" class="alert alert-danger" >Password is required</label>
+        </div>
+      <div>
+          <label>Enter Confirm Password</label>
+        <input type="password" class="form-control" formControlName="con_password" >
+        <label *ngIf="customer.get('passwordgroup').get('con_password').hasError('required')" class="alert alert-danger" >confirmPassword is required</label>
+      </div>
+      <label *ngIf="customer.get('passwordgroup').hasError('passwordNotMatched')" class="alert alert-danger" >confirm password and password should be same</label>
+    </div>
       <div class="form-group" >
       <button type="submit" class="form-control  btn btn-primary"  >Save</button>
       </div>
