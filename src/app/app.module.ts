@@ -18,6 +18,7 @@ import { EdittaskComponent } from './taskproduct/edittask/edittask.component';
 import { AddTaskComponent } from './taskproduct/add-task/add-task.component';
 import { TasksidebarComponent } from './tasksidebar/tasksidebar.component';
 import { CustomerComponent } from './customer/customer.component';
+import { SignupReactiveDemoComponent } from './userdisplay/signup-reactive-demo/signup-reactive-demo.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,6 +36,7 @@ import { CustomerComponent } from './customer/customer.component';
     AddTaskComponent,
     TasksidebarComponent,
     CustomerComponent,
+    SignupReactiveDemoComponent,
 
   ],
   imports: [

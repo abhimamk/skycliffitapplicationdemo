@@ -11,6 +11,7 @@ import { EditproductComponent } from './productdisplay/editproduct/editproduct.c
 import { TaskproductComponent } from './taskproduct/taskproduct.component';
 import { AddTaskComponent } from './taskproduct/add-task/add-task.component';
 import { CustomerComponent } from './customer/customer.component';
+import { SignupReactiveDemoComponent } from './userdisplay/signup-reactive-demo/signup-reactive-demo.component';
 
 
 const arr : Routes=[
@@ -18,6 +19,7 @@ const arr : Routes=[
   {path:'addproduct',component:ProductaddComponent},
   {path:'editproduct/:pro_id',component:EditproductComponent},
   {path:'customer',component:CustomerComponent},
+  {path:'signup2',component:SignupReactiveDemoComponent},
   {path:'users',component:UserdisplayComponent},
   {path:'addtask',component:AddTaskComponent},
   {path:'tasks',component:TaskproductComponent},
