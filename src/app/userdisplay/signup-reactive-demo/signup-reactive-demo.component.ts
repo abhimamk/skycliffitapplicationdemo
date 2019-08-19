@@ -1,11 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import {
-  FormGroup,
-  FormBuilder,
-  FormControl,
-  Validators,
-  AbstractControl
-} from "@angular/forms";
+import {FormGroup,FormBuilder,FormControl,Validators,AbstractControl} from "@angular/forms";
 import { UserdataService } from "../userdata.service";
 import { User } from "../user";
 import { CheckEmail } from '../checkemail';
