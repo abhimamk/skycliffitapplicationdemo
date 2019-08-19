@@ -10,12 +10,14 @@ import { EdituserComponent } from './userdisplay/edituser/edituser.component';
 import { EditproductComponent } from './productdisplay/editproduct/editproduct.component';
 import { TaskproductComponent } from './taskproduct/taskproduct.component';
 import { AddTaskComponent } from './taskproduct/add-task/add-task.component';
+import { CustomerComponent } from './customer/customer.component';
 
 
 const arr : Routes=[
   {path:'',component:ProductdisplayComponent},
   {path:'addproduct',component:ProductaddComponent},
   {path:'editproduct/:pro_id',component:EditproductComponent},
+  {path:'customer',component:CustomerComponent},
   {path:'users',component:UserdisplayComponent},
   {path:'addtask',component:AddTaskComponent},
   {path:'tasks',component:TaskproductComponent},

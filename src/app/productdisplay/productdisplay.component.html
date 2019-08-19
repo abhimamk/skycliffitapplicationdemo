@@ -1,10 +1,11 @@
+
 <div class="container">
   <div class="col-md-3">
     <app-sidebar [categoryName]="name" (jinal)="onSideBarClick($event)"></app-sidebar>
 
   </div>
   <div class="col-md-9">
-
+      <h1>product display</h1>
     <div class="row">
       <div class="col-sm-6 col-md-4" *ngFor="let item of arr">
         <div class="thumbnail">
