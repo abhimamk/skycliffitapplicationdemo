@@ -23,6 +23,7 @@ import { EdituserreactiveComponent } from './userdisplay/edituserreactive/editus
 import { LoginComponent } from './login/login.component';
 import { DemoComponent } from './demo/demo.component';
 import { Demo1Component } from './demo1/demo1.component';
+import { Demo2Component } from './demo2/demo2.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,6 +46,7 @@ import { Demo1Component } from './demo1/demo1.component';
     LoginComponent,
     DemoComponent,
     Demo1Component,
+    Demo2Component,
   ],
   imports: [
     BrowserModule,
