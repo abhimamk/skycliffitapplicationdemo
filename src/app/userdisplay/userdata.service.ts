@@ -1,6 +1,8 @@
 import { Injectable } from "@angular/core";
-import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { HttpClient, HttpHeaders, HttpErrorResponse } from "@angular/common/http";
 import { Router } from '@angular/router';
+import { catchError, retry } from 'rxjs/operators';
+import { throwError } from 'rxjs';
 @Injectable({
   providedIn: "root"
 })
@@ -9,7 +11,19 @@ export class UserdataService {
   constructor(private _http: HttpClient,private _router:Router) {}
 
   getAllUsers() {
-    return this._http.get(this.url);
+    return this._http.get(this.url).pipe(
+      retry(5),
+      catchError(this.handleError)
+    );
+  }
+  private handleError(ex:HttpErrorResponse){
+    if(ex.error instanceof ErrorEvent){
+      console.log('client side error',ex.message);
+    }
+    else{
+      console.log('server side error',ex.message);
+    }
+   return  throwError('something went wrong');
   }
   getUserByEmail(user_email) {
     return this._http.get(this.url+user_email);
