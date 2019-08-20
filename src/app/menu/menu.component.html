@@ -22,6 +22,7 @@
         <li routerLinkActive="active"><a  routerLink="/tasks">Task</a></li>
         <li routerLinkActive="active"><a  routerLink="/addtask">AddTask</a></li>
         <li routerLinkActive="active"><a  routerLink="/customer">Customer</a></li>
+        <li routerLinkActive="active"><a  routerLink="/demo">Demo</a></li>
         <li *ngIf="!isLoggedIn()"  routerLinkActive="active"><a  routerLink="/login">Login</a></li>
         <li *ngIf="isLoggedIn()" routerLinkActive="active"><a (click)="onLogOut()" >LogOut</a></li>
       </ul>

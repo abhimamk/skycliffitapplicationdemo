@@ -21,6 +21,8 @@ import { CustomerComponent } from './customer/customer.component';
 import { SignupReactiveDemoComponent } from './userdisplay/signup-reactive-demo/signup-reactive-demo.component';
 import { EdituserreactiveComponent } from './userdisplay/edituserreactive/edituserreactive.component';
 import { LoginComponent } from './login/login.component';
+import { DemoComponent } from './demo/demo.component';
+import { Demo1Component } from './demo1/demo1.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,6 +43,8 @@ import { LoginComponent } from './login/login.component';
     SignupReactiveDemoComponent,
     EdituserreactiveComponent,
     LoginComponent,
+    DemoComponent,
+    Demo1Component,
   ],
   imports: [
     BrowserModule,
