@@ -29,6 +29,7 @@ export class UserdataService {
     return this._http.delete(this.url + user_email, { headers: head });
   }
   currentUser;
+  redirectURL:string;
   login(user_email:string,user_password:string){
     if(user_email=="admin" && user_password=="1234"){
         this.currentUser={
@@ -46,6 +47,7 @@ export class UserdataService {
   }
   logout(){
     this.currentUser=null;
+    this.redirectURL='';
     this._router.navigate(['/login']);
   }
   get isLoggedIn():boolean{

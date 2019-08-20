@@ -14,14 +14,14 @@ import { AddTaskComponent } from './taskproduct/add-task/add-task.component';
 import { CustomerComponent } from './customer/customer.component';
 import { SignupReactiveDemoComponent } from './userdisplay/signup-reactive-demo/signup-reactive-demo.component';
 import { LoginComponent } from './login/login.component';
-
+import { UserGuardService } from './user-guard.service';
 
 const arr : Routes=[
   {path:'',component:ProductdisplayComponent},
   {path:'addproduct',component:ProductaddComponent},
   {path:'editproduct/:pro_id',component:EditproductComponent},
-  {path:'customer',component:CustomerComponent},
-  {path:'signup2',component:SignupReactiveDemoComponent},
+  {path:'customer',canActivate:[UserGuardService], component:CustomerComponent},
+  {path:'signup2',canActivate:[UserGuardService],component:SignupReactiveDemoComponent},
   {path:'users',component:UserdisplayComponent},
   {path:'login',component:LoginComponent},
   {path:'addtask',component:AddTaskComponent},
