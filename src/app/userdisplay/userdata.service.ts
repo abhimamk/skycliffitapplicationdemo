@@ -29,9 +29,11 @@ export class UserdataService {
     return this._http.get(this.url+user_email);
   }
   addUser(newuser) {
-    let head = new HttpHeaders().set("Content-Type", "application/json");
+    // let head = new HttpHeaders().set("Content-Type", "application/json");
     let body = JSON.stringify(newuser);
-    return this._http.post(this.url, body, { headers: head });
+    return this._http.post(this.url, body).pipe(
+      catchError(this.handleError)
+    );
   }
   editUser(newuser) {
     let head = new HttpHeaders().set("Content-Type", "application/json");

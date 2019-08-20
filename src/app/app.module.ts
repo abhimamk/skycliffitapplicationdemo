@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from "@angular/common/http";
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { FormsModule,ReactiveFormsModule } from "@angular/forms";
 import { AppComponent } from './app.component';
 import { ProductdisplayComponent } from './productdisplay/productdisplay.component';
@@ -24,6 +24,7 @@ import { LoginComponent } from './login/login.component';
 import { DemoComponent } from './demo/demo.component';
 import { Demo1Component } from './demo1/demo1.component';
 import { Demo2Component } from './demo2/demo2.component';
+import { Interceptors } from './interceptors';
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,7 +56,7 @@ import { Demo2Component } from './demo2/demo2.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [ {provide:HTTP_INTERCEPTORS,useClass:Interceptors,multi:true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
