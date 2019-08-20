@@ -29,4 +29,7 @@ arr:User[]=[];
   onUserEdit(item:User){
     this._router.navigate(['/edituser',item.user_email]);
   }
+  onUserEditReactive(item:User){
+    this._router.navigate(['/edituserreactive',item.user_email]);
+  }
 }

@@ -1,3 +1,4 @@
+import { EdituserreactiveComponent } from './userdisplay/edituserreactive/edituserreactive.component';
 import { EdittaskComponent } from './taskproduct/edittask/edittask.component';
 import { Component } from '@angular/core';
 import { Routes,RouterModule } from "@angular/router";
@@ -26,6 +27,7 @@ const arr : Routes=[
   {path:'signup',component:SignupComponent},
   {path:'edittask/:Id',component:EdittaskComponent},
   {path:'edituser/:user_email',component:EdituserComponent},
+  {path:'edituserreactive/:user_email',component:EdituserreactiveComponent},
   {path:'pagenotfound',component:PagenotfoundComponent},
   {path:'**',redirectTo:'/pagenotfound'},
 
