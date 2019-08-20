@@ -13,6 +13,7 @@ import { TaskproductComponent } from './taskproduct/taskproduct.component';
 import { AddTaskComponent } from './taskproduct/add-task/add-task.component';
 import { CustomerComponent } from './customer/customer.component';
 import { SignupReactiveDemoComponent } from './userdisplay/signup-reactive-demo/signup-reactive-demo.component';
+import { LoginComponent } from './login/login.component';
 
 
 const arr : Routes=[
@@ -22,6 +23,7 @@ const arr : Routes=[
   {path:'customer',component:CustomerComponent},
   {path:'signup2',component:SignupReactiveDemoComponent},
   {path:'users',component:UserdisplayComponent},
+  {path:'login',component:LoginComponent},
   {path:'addtask',component:AddTaskComponent},
   {path:'tasks',component:TaskproductComponent},
   {path:'signup',component:SignupComponent},

@@ -20,6 +20,7 @@ import { TasksidebarComponent } from './tasksidebar/tasksidebar.component';
 import { CustomerComponent } from './customer/customer.component';
 import { SignupReactiveDemoComponent } from './userdisplay/signup-reactive-demo/signup-reactive-demo.component';
 import { EdituserreactiveComponent } from './userdisplay/edituserreactive/edituserreactive.component';
+import { LoginComponent } from './login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,6 +40,7 @@ import { EdituserreactiveComponent } from './userdisplay/edituserreactive/editus
     CustomerComponent,
     SignupReactiveDemoComponent,
     EdituserreactiveComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
