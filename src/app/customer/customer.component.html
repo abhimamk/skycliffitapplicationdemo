@@ -46,7 +46,7 @@
     <div class="form-group">
       <button class="btn btn-info" (click)="onAddHobbyClicked()" >Add hobby</button>
       <div formArrayName="hobby">
-          <div *ngFor="let item of customer.get('hobby').controls;let i=index" >
+          <div *ngFor="let item of getControls();let i=index" >
           <input type="text" placeholder=" add hobby" [formControlName]='i'>
           <button (click)="onDeleteHobbyClicked(i)" >Delete</button>
         </div>

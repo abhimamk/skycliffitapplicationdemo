@@ -41,6 +41,9 @@ invalidName:string[]=['xyz','abc'];
       }
     );
   }
+  getControls() {
+    return (<FormArray>this.customer.get('hobby')).controls;
+ }
 
   checkFirstName(x:AbstractControl):{[y:string]:boolean}
   {
