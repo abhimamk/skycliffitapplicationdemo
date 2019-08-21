@@ -16,6 +16,7 @@ import { HomeComponent } from './home/home.component';
 
 const arr : Routes=[
   {path:'',component:HomeComponent},
+  {path:'product',loadChildren:'./productdisplay/product.module#ProductModule'},
   {path:'product1',resolve:{p_data:ProductResloveService},component:ProductloadresolveComponent},
   {path:'signup2',canActivate:[UserGuardService],component:SignupReactiveDemoComponent},
   {path:'login',component:LoginComponent},

@@ -19,7 +19,6 @@ import { Demo1Component } from './demo1/demo1.component';
 import { Demo2Component } from './demo2/demo2.component';
 import { Interceptors } from './interceptors';
 import { ProductloadresolveComponent } from './productloadresolve/productloadresolve.component';
-import { ProductModule } from './productdisplay/product.module';
 import { HomeComponent } from './home/home.component';
 import { UserModule } from './userdisplay/user.module';
 @NgModule({
@@ -46,7 +45,6 @@ import { UserModule } from './userdisplay/user.module';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    ProductModule,
     UserModule,
     CustomerModule
   ],

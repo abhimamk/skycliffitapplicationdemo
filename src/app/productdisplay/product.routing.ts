@@ -4,8 +4,12 @@ import { ProductdisplayComponent } from './productdisplay.component';
 import { RouterModule, Routes } from '@angular/router';
 
 const arr : Routes=[
-  {path:'addproduct',  component:ProductaddComponent},
-  {path:'editproduct/:pro_id',component:EditproductComponent},
-  {path:'product',component:ProductdisplayComponent}
- ];
- export const prodcutrouting=RouterModule.forChild(arr);
+  {path:'', children:[
+    {path:'',component:ProductdisplayComponent},
+    {path:'addproduct',  component:ProductaddComponent},
+    {path:'editproduct/:pro_id',component:EditproductComponent}
+  ]},
+
+
+];
+export const prodcutrouting=RouterModule.forChild(arr);

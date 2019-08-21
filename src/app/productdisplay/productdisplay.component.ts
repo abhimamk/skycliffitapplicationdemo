@@ -12,12 +12,15 @@ import { Router } from "@angular/router";
 export class ProductdisplayComponent implements OnInit {
   arr: Product[] = [];
   name: string = "watch";
+  loading:boolean=true;
   constructor(private _data: ProductdataService,private _router:Router) {}
 
   ngOnInit() {
+    this.loading=true;
     this._data.getAllProducts().subscribe(
       (data: Product[]) => {
         this.arr = data;
+        this.loading=false;
       },
       function(error) {
         alert(error);
@@ -31,7 +34,7 @@ export class ProductdisplayComponent implements OnInit {
     });
   }
   onProductEdit(item:Product){
-    this._router.navigate(['/editproduct',item.pro_id]);
+    this._router.navigate(['/product/editproduct',item.pro_id]);
   }
   onSideBarClick(value) {
     if (value != "") {
