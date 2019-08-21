@@ -1,3 +1,4 @@
+import { ProductloadresolveComponent } from './productloadresolve/productloadresolve.component';
 import { EdituserreactiveComponent } from './userdisplay/edituserreactive/edituserreactive.component';
 import { EdittaskComponent } from './taskproduct/edittask/edittask.component';
 import { Component } from '@angular/core';
@@ -18,9 +19,11 @@ import { UserGuardService } from './user-guard.service';
 import { DemoComponent } from './demo/demo.component';
 import { Demo1Component } from './demo1/demo1.component';
 import { Demo2Component } from './demo2/demo2.component';
+import { ProductResloveService } from './product-reslove.service';
 
 const arr : Routes=[
   {path:'',component:ProductdisplayComponent},
+  {path:'product1',resolve:{p_data:ProductResloveService},component:ProductloadresolveComponent},
   {path:'addproduct',component:ProductaddComponent},
   {path:'editproduct/:pro_id',component:EditproductComponent},
   {path:'customer',canActivate:[UserGuardService], component:CustomerComponent},
