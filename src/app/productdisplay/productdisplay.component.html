@@ -8,14 +8,14 @@
       <h1>product display</h1>
     <div class="row">
       <div class="col-sm-6 col-md-4" *ngFor="let item of arr">
-        <div class="thumbnail">
-          <img [src]="item.pro_img" height="200px" width="200px" alt="...">
-          <div class="caption">
-            <h3>{{item.pro_name}}</h3>
-            <p>{{item.pro_desc}}</p>
-            <p>{{item.pro_qty}}</p>
-            <p>{{item.pro_mfg}}</p>
-            <p>{{item.pro_price | currency:'INR' }}</p>
+        <div class="card"  style="width: 18rem;">
+          <img [src]="item.pro_img"  class="card-img-top" style="height: 200px;width: 200px;" alt="...">
+          <div class="card-body">
+            <h3  class="card-title">{{item.pro_name}}</h3>
+            <p class="card-text">{{item.pro_desc}}</p>
+            <p class="card-text">{{item.pro_qty}}</p>
+            <p class="card-text">{{item.pro_mfg}}</p>
+            <p class="card-text">{{item.pro_price | currency:'INR' }}</p>
             <p>
               <a (click)="onProductDelete(item)" class="btn btn-primary" role="button">Delete</a>
               <a (click)="onProductEdit(item)" class="btn btn-primary" role="button">Edit</a>
