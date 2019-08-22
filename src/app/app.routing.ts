@@ -13,10 +13,11 @@ import { Demo1Component } from './demo1/demo1.component';
 import { Demo2Component } from './demo2/demo2.component';
 import { ProductResloveService } from './product-reslove.service';
 import { HomeComponent } from './home/home.component';
+import { AppProductPreloader } from './appproductpreloader';
 
 const arr : Routes=[
   {path:'',component:HomeComponent},
-  {path:'product',loadChildren:'./productdisplay/product.module#ProductModule'},
+  {path:'product',data:{preload:true},loadChildren:'./productdisplay/product.module#ProductModule'},
   {path:'product1',resolve:{p_data:ProductResloveService},component:ProductloadresolveComponent},
   {path:'signup2',canActivate:[UserGuardService],component:SignupReactiveDemoComponent},
   {path:'login',component:LoginComponent},
@@ -33,4 +34,4 @@ const arr : Routes=[
 
 ];
 
-export const routing=RouterModule.forRoot(arr);
+export const routing=RouterModule.forRoot(arr,{preloadingStrategy:AppProductPreloader});

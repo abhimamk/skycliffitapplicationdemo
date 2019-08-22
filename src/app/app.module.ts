@@ -21,6 +21,7 @@ import { Interceptors } from './interceptors';
 import { ProductloadresolveComponent } from './productloadresolve/productloadresolve.component';
 import { HomeComponent } from './home/home.component';
 import { UserModule } from './userdisplay/user.module';
+import { AppProductPreloader } from './appproductpreloader';
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,7 +49,7 @@ import { UserModule } from './userdisplay/user.module';
     UserModule,
     CustomerModule
   ],
-  providers: [ {provide:HTTP_INTERCEPTORS,useClass:Interceptors,multi:true}],
+  providers: [ {provide:HTTP_INTERCEPTORS,useClass:Interceptors,multi:true}, AppProductPreloader],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
